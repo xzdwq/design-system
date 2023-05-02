@@ -1,11 +1,24 @@
 {
   "name": "design-system",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/qvant-components-library.umd.cjs",
+  "module": "./dist/qvant-components-library.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/qvant-components-library.js",
+      "require": "./dist/qvant-components-library.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build && build-storybook",
+    "build:app": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
     "prod": "vue-tsc --noEmit && vite build && vite preview",
     "storybook": "storybook dev -p 6006 --no-open",
