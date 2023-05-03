@@ -1,27 +1,24 @@
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <CheckBoxGroup v-model:value="selectValues" :options="options" />
+    <div>{{ selectValues }}</div>
   </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
+<script setup>
+import { ref } from "vue"
+import CheckBoxGroup from './components/CheckBoxGroup.vue'
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+let options = ref([
+  { name: "Filter 1", id: 1 },
+  { name: "Filter 2", id: 2 },
+  { name: "Filter 3", id: 3 },
+  { name: "Filter 4", id: 4 },
+  { name: "Filter 5", id: 5 },
+  { name: "Filter 6", id: 6 },
+  { name: "Filter 7", id: 7 },
+]
+);
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+let selectValues = ref([]);
+</script>
