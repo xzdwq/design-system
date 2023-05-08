@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  design-system:
+    image: design-system
+    build:
+      context: ../../
+      dockerfile: docker/development/Dockerfile
+    ports:
+      - 6006:6006

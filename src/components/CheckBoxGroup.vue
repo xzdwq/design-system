@@ -12,15 +12,18 @@
 </template>
 
 <script setup lang="ts">
-import CheckBox from "./CheckBox.vue";
+import CheckBox from './CheckBox.vue';
 
-const props = withDefaults(defineProps<{
-  value?: any[];
-  options: any[];
-}>(), {
-  value: () => [],
-  options: () => [],
-});
+const props = withDefaults(
+  defineProps<{
+    value?: any[];
+    options: any[];
+  }>(),
+  {
+    value: () => [],
+    options: () => [],
+  },
+);
 
 const emit = defineEmits(['update:value']);
 
@@ -31,6 +34,6 @@ const check = (optionId: any, checked: any) => {
   } else {
     updatedValue.splice(updatedValue.indexOf(optionId), 1);
   }
-  emit("update:value", updatedValue);
+  emit('update:value', updatedValue);
 };
 </script>

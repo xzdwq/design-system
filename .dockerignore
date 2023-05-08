@@ -1,0 +1,13 @@
+node_modules
+dist
+storybook-static
+.vscode
+
+.dockerignore
+
+.git
+.gitignore
+
+.editorconfig
+
+README.md

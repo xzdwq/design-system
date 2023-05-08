@@ -6,8 +6,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
-import CheckBoxGroup from './components/CheckBoxGroup.vue'
+import { ref } from "vue";
+import CheckBoxGroup from './components/CheckBoxGroup.vue';
 
 let options = ref([
   { name: "Filter 1", id: 1 },
